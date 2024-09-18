@@ -7,6 +7,9 @@ hooks:
       timeout: 300
       runas: root
   AfterInstall:
+    - location: scripts/instance_os_dependencies.sh
+      timeout: 300
+      runas: root  # This should be run as root since installing Docker requires root privileges
     - location: scripts/start_container.sh
       timeout: 300
       runas: root
